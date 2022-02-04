@@ -28,9 +28,12 @@ Kudu is a columnar storage manager developed for the Apache Hadoop platform. Kud
  git clone "https://github.com/ThinkBigEg/kudu-pyspark"
  cd kudu-pyspark
  ```
- ### Build the image
+ ### Build the images
  ```sh
- docker build . --tag kudu-python
+ docker build . -f base.Dockerfile -t base-kudu
+ docker build . -f kudu-master.Dockerfile -t kudu-master
+ docker build . -f kudu-tserver.Dockerfile -t kudu-tserver
+ docker build . -f kudu-client.Dockerfile -t kudu-client
  ```
  ### Build the containers
  ```sh
