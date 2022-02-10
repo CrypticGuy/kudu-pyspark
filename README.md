@@ -25,7 +25,7 @@ Kudu is a columnar storage manager developed for the Apache Hadoop platform. Kud
  ## Tutorial 
  ### Clone the repository
  ```sh
- git clone "https://github.com/ThinkBigEg/kudu-pyspark"
+ git clone "https://github.com/CrypticGuy/kudu-pyspark.git"
  cd kudu-pyspark
  ```
  ### Build the images
