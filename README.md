@@ -1,6 +1,4 @@
-#   Kudu-Pyspark using Docker by [![N|Solid](https://think-big.solutions/img/logo.png)](https://think-big.solutions)
-
-![logo](http://getkudu.io/img/logo.png) ![logo](https://www.docker.com/sites/default/files/social/docker_facebook_share.png) 
+#   Kudu-Pyspark using Docker
 
 ### NOTE: This image is for testing use not for production use
 
@@ -52,8 +50,9 @@ Kudu is a columnar storage manager developed for the Apache Hadoop platform. Kud
 
  ### Open the kudu-client container
  ```sh
- docker-compose run -p 7777:7777 kudu-client bash
+ docker-compose run -p 7777:7777 -v myvol:/root kudu-client bash
  ```
+ The above command maps a docker volume (you can read about it here: https://docs.docker.com/storage/volumes/) to the path "/root" inside the docker virtual machine. So, any file or code you create inside /root folder will persist across sessions. Please note by default the bash opens in "/", but we are persisting the "/root" folder.
  ### Open jupyter notebook
  ```sh
  ./spark/bin/pyspark --packages  org.apache.kudu:kudu-spark2_2.11:1.4.0
