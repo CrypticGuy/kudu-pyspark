@@ -52,7 +52,7 @@ Kudu is a columnar storage manager developed for the Apache Hadoop platform. Kud
  ```sh
  docker-compose run -p 7777:7777 -v myvol:/opt/spark/notebooks kudu-client bash
  ```
- The above command maps a docker volume (you can read about it here: https://docs.docker.com/storage/volumes/) to the path "/root" inside the docker virtual machine. So, any file or code you create inside /root folder will persist across sessions. Please note by default the bash opens in "/", but we are persisting the "/root" folder.
+ The above command maps a docker volume (you can read about it here: https://docs.docker.com/storage/volumes/) to the path "/root" inside the docker virtual machine. So, any file or code you create inside /root folder will persist across sessions. Please note by default the bash opens in "/", but we are persisting the "/opt/spark/notebooks" folder.
  ### Open jupyter notebook
  ```sh
  ./spark/bin/pyspark --packages  org.apache.kudu:kudu-spark2_2.11:1.4.0
